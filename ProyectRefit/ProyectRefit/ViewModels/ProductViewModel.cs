@@ -9,27 +9,34 @@ namespace ProyectRefit.ViewModels
     using System;
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Linq;
     using System.Text;
     using System.Windows.Input;
+    using Xamarin.Forms;
 
     public class ProductViewModel:BaseViewModel
     {
-        private ObservableCollection<Product> listProdut;
+        private List<Product> myProduct;
+        private ObservableCollection<ProductItemViewModel> listProduct;
         private bool isRefresh;
+
         public bool IsRefreshing
         {
             get => isRefresh;
             set => SetValue(ref isRefresh,value);
         }
-        public ObservableCollection<Product> ListProduct
+
+        public ObservableCollection<ProductItemViewModel> ListProduct
         {
-            get => listProdut;
-            set => SetValue(ref listProdut, value);
+            get => listProduct;
+            set => SetValue(ref listProduct, value);
         }
+
         public ProductViewModel()
         {
             LoadProduct();
         }
+
         public ICommand RefreshCommand => new RelayCommand(Refresh);
 
       
@@ -39,14 +46,62 @@ namespace ProyectRefit.ViewModels
             {
                 IsRefreshing = true;
                 var apiService = RestService.For<IApiService>("http://192.168.2.2:8001/api");
-                var response =  await apiService.GetProduct();
-                ListProduct = new ObservableCollection<Product>(response);
+                this.myProduct =  await apiService.GetProduct();
+                // ListProduct = new ObservableCollection<Product>(response);
+                this.ProductRefresh();
                 IsRefreshing = false;
             }
             catch (Exception ex)
             {
-
+               await Application.Current.MainPage.DisplayAlert(
+                    "Error",
+                    "Error con la Peticcion de los recursos.",
+                    "Ok");
             }
+        }
+        public void AddProductToList(Product product)
+        {
+            this.myProduct.Add(product);
+            this.ProductRefresh();
+        }
+        public void updateProduct(Product product)
+        {
+            var previousProduct = this.myProduct.Where(p => p.Id ==  product.Id).FirstOrDefault();
+
+            if (previousProduct!=null)
+            {
+                this.myProduct.Remove(previousProduct);
+            }
+
+            this.myProduct.Add(product);
+
+            this.ProductRefresh();
+        }
+
+        public void DeleteProduct(int productId)
+        {
+            var previousProduct = myProduct.Where(p => p.Id == productId).FirstOrDefault();
+
+            if (previousProduct != null)
+            {
+                 this.myProduct.Remove(previousProduct);
+            }
+
+            this.ProductRefresh();
+        }
+
+        public void ProductRefresh()
+        {
+            this.ListProduct = new ObservableCollection<ProductItemViewModel>(
+                myProduct.Select(p => new ProductItemViewModel
+                {
+                    Id = p.Id,
+                    Name = p.Name,
+                    Description = p.Description,
+                    Price = p.Price,
+                    IsAvalible = p.IsAvalible,
+                    Image = p.Image
+                }).OrderBy(p => p.Name));
         }
         private void Refresh()
         {

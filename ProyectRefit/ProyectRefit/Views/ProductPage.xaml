@@ -21,11 +21,15 @@
                     <DataTemplate>
                         <ViewCell>
                         <StackLayout>
-                            <Grid>
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="Auto"></ColumnDefinition>
-                                    <ColumnDefinition Width="*"></ColumnDefinition>
-                                </Grid.ColumnDefinitions>
+                                <Grid>
+                                    <Grid.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding SelectProductCommand}"/>
+                                    </Grid.GestureRecognizers>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                        <ColumnDefinition Width="*"></ColumnDefinition>
+                                        <ColumnDefinition Width="Auto"></ColumnDefinition>
+                                    </Grid.ColumnDefinitions>
                                
                                     <Image
                                         Grid.Column="0"
@@ -55,6 +59,11 @@
                                     	TextColor="Black">
                                         </Label>
                                     </StackLayout>
+                                    <Image
+                                        Grid.Column="2"
+                                        HeightRequest="70"
+                                        WidthRequest="70"
+                                        Source="ic_arrow_forward_ios"/>
                                 </Grid>
                         </StackLayout>
                         </ViewCell>

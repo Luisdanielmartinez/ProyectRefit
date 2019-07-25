@@ -15,8 +15,10 @@ namespace ProyectRefit.ViewModels
         public  LoginViewModel Login { get; set; }
         public AddProductViewModel AddProduct { get; set; }
         public PostViewModel Post { get; set; }
+        public EditViewModel EditProduct { get; set; }
         public ProductViewModel Products { get; set; }
         public ICommand AddProductCommand => new RelayCommand(GoToProduct);
+
         public MainViewModel()
         {
             mainViewModel = this;
@@ -29,6 +31,7 @@ namespace ProyectRefit.ViewModels
             }
             return mainViewModel;
         }
+
         public void GoToProduct()
         {
             this.AddProduct = new AddProductViewModel();
