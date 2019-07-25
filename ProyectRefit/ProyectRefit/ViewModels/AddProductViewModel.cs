@@ -90,7 +90,7 @@ namespace ProyectRefit.ViewModels
                     "Error al enviar los datos",
                     "Ok");
                 IsRunning = false;
-               // IsEnabled = false;
+               // IsEnabled = false;sdas
             }
         }
         public bool parametros() {
