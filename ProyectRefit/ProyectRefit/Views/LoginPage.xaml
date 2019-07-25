@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectRefit.Views.LoginPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Login">
+    <ContentPage.Content>
+        <ScrollView
+            BindingContext="{Binding Login}"
+            Padding="8"
+            >
+            <StackLayout Orientation="Vertical">
+                <Label
+                    TextColor="Black"
+                    Margin="0,10"
+                    FontSize="Large"
+                    VerticalOptions="Center"
+                    HorizontalOptions="Center"
+                    FontAttributes="Bold"
+                    Text="Bienvenidos"/>
+                <Label
+                    Margin="0,10"
+                    FontSize="Medium"
+                    Text="Email"
+                    FontAttributes="Bold"/>
+                <Entry
+                    Placeholder="Ingrese su Email..."
+                    Text="{Binding Email}"
+                    Margin="0,3"
+                    WidthRequest="80"/>
+                <Label
+                    Margin="0,10"
+                    FontSize="Medium"
+                    Text="Password"
+                    FontAttributes="Bold"/>
+                <Entry
+                    Placeholder="Ingrese su Password..."
+                    Text="{Binding Password}"
+                    Margin="0,3"
+                    WidthRequest="80"/>
+                
+                <StackLayout Orientation="Horizontal">
+                    <Label
+                        TextColor="Blue"
+                        HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"
+                        FontSize="Medium"
+                        FontAttributes="Bold"
+                        Text="Olvido su contrasena?"/>
+                    <Label
+                        TextColor="Blue"
+                        HorizontalOptions="Center"
+                        VerticalOptions="Center"
+                        FontSize="Medium"
+                        FontAttributes="Bold"
+                        Text="Registrarse"/>
+                </StackLayout>
+                <ActivityIndicator
+                        IsVisible="{Binding IsVisible}"
+                        Color="Accent"
+                        BackgroundColor="Transparent"
+                        VerticalOptions="Center"
+                        HorizontalOptions="Center"
+                        IsRunning="{Binding IsRunning}"/>
+
+                <Button
+                    Command="{Binding LoginCommand}"
+                    HeightRequest="52"
+                    BorderRadius="26"
+                    FontSize="Large"
+                    TextColor="Black"
+                    Text="Sing In"/>
+            </StackLayout>
+
+        </ScrollView>
+      
+    </ContentPage.Content>
+</ContentPage>

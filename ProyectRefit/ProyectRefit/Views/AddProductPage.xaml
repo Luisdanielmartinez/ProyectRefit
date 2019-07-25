@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectRefit.Views.AddProductPage"
+             BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             Title="Add Product">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="10"
+            BindingContext="{Binding AddProduct}">
+            <Image
+                WidthRequest="100"
+                HeightRequest="100"
+                Margin="0,15"
+                Source="tokephoto"/>
+            <Label
+                Margin="0,5"
+                HorizontalOptions="Center"
+                VerticalOptions="Center"
+                FontSize="Medium"
+                FontAttributes="Bold"
+                Text="Toque la Image"/>
+            <Entry
+                Margin="0,5"
+                Placeholder="Ingrese el nombre del producto"
+                Text="{Binding Name}"/>
+            <Editor
+                Margin="0,5"
+                Text="{Binding Description}"
+                Placeholder="Ingrese la descricion"/>
+            <Entry
+                Placeholder="Precio"
+                WidthRequest="50"
+                HeightRequest="50"
+                Text="{Binding Price}"/>
+            <StackLayout
+                Orientation="Horizontal">
+                <Label 
+                    TextColor="Black"
+                    FontSize="Medium"
+                    FontAttributes="Bold"
+                    Text="Disponible"/>
+                <Switch 
+                    IsToggled="{Binding IsToggled}"/>
+            </StackLayout>
+            <ActivityIndicator
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                IsRunning="{Binding IsRunning}">
+                
+            </ActivityIndicator>
+            <Button
+                Command="{Binding ConfirmarCommand}"
+                HeightRequest="40"
+                BorderRadius="20"
+                TextColor="Black"
+                FontAttributes="Bold"
+                FontSize="Medium"
+                Text="Confirmar"
+               
+               />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
