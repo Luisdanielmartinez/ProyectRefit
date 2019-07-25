@@ -55,7 +55,7 @@ namespace ProyectRefit.ViewModels
                     return;
                 }
               
-                //isEnabled = true;
+                //isEnabled = true;sds
                 IsRunning = true;
                 product.Image = "image";
                 product.Name = Name;
