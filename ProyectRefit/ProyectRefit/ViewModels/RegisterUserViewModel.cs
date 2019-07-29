@@ -16,7 +16,9 @@ namespace ProyectRefit.ViewModels
     public class RegisterUserViewModel : BaseViewModel
     {
         private ValidationUnit _unit;
+        //los binding de la ui
 
+         //validacion de los entry
         public ValidatableObject<string> FirstName { get; set; }
         public ValidatableObject<string> LastName { get; set; }
         public ValidatableObject<string> Address { get; set; }
@@ -52,12 +54,12 @@ namespace ProyectRefit.ViewModels
             {
                 var user = new User
                 {
-                    Email = this.Email.ToString(),
-                    Passowrd = this.Password.ToString(),
-                    FirstName = this.FirstName.ToString(),
-                    LastName = this.LastName.ToString(),
-                    Address = this.Address.ToString(),
-                    Tell = this.Tel.ToString()
+                    Email = this.Email.Value,
+                    Passowrd = this.Password.Value,
+                    FirstName = this.FirstName.Value,
+                    LastName = this.LastName.Value,
+                    Address = this.Address.Value,
+                    Tell = this.Tel.Value
 
                 };
                 var url = Application.Current.Resources["UrlApi"].ToString();
