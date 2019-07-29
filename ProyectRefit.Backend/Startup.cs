@@ -55,7 +55,7 @@ namespace ProyectRefit.Backend
                         LastName="Martinez",
                         Email="Luisdaniel@gmail.com",
                         Passowrd="12345",
-                        Cell="829-662-8990"
+                        Tell="829-662-8990"
                          
                     },
                       new User(){
@@ -63,7 +63,7 @@ namespace ProyectRefit.Backend
                         LastName="Perez",
                         Email="Perez@gmail.com",
                         Passowrd="12345",
-                        Cell="829-662-6653"
+                        Tell="829-662-6653"
 
                     }
                 });
@@ -79,17 +79,29 @@ namespace ProyectRefit.Backend
                         Name="Samsung",
                         Description="Este es un telefono",
                         IsAvalible=true,
-                        Price=232
+                        Price=232,
+                        user=new User
+                        {
+
+                        }
                     },
                      new Product()
-                    {
+                     {
                         Image="image",
                         Name="pc",
                         Description="Este es un computadora",
                         IsAvalible=true,
-                        Price=39
-                        
-                    }
+                        Price=39,
+                        user=new User(){
+                            FirstName ="Daniel",
+                            LastName="Perez",
+                            Email="Perez@gmail.com",
+                            Passowrd="12345",
+                            Tell="829-662-6653"
+
+                        }
+
+                     }
                      
                 });
                 context.SaveChanges();

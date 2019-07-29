@@ -14,10 +14,10 @@ namespace ProyectRefit.ViewModels
     {
         public ICommand SelectProductCommand=>new RelayCommand(this.SelectProduct);
 
-        private void SelectProduct()
+        private async void SelectProduct()
         {
             MainViewModel.GetInstance().EditProduct = new EditViewModel((Product)this);
-            Application.Current.MainPage.Navigation.PushAsync(new EditProductPage());
+            await App.Navigator.PushAsync(new EditProductPage());
         }
     }
 }

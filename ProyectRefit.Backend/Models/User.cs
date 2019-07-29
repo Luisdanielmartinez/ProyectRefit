@@ -20,6 +20,6 @@ namespace ProyectRefit.Backend.Models
         [StringLength(30)]
         public string Address { get; set; }
         [StringLength(11)]
-        public string Cell { get; set; }
+        public string Tell { get; set; }
     }
 }

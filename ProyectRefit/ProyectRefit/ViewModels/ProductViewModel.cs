@@ -45,7 +45,8 @@ namespace ProyectRefit.ViewModels
             try
             {
                 IsRefreshing = true;
-                var apiService = RestService.For<IApiService>("http://192.168.2.2:8001/api");
+                var url = Application.Current.Resources["UrlApi"].ToString();
+                var apiService = RestService.For<IApiService>(url);
                 this.myProduct =  await apiService.GetProduct();
                 // ListProduct = new ObservableCollection<Product>(response);
                 this.ProductRefresh();

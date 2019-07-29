@@ -166,4 +166,13 @@
   <ItemGroup>
     <BundleResource Include="Resources\ic_arrow_forward_ios.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\home.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\addProduct.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ic_add_shopping_cart.png" />
+  </ItemGroup>
 </Project>

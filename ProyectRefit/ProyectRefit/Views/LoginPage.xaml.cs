@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectRefit.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,19 @@ namespace ProyectRefit.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class LoginPage : ContentPage
 	{
-		public LoginPage ()
+        private LoginViewModel _contextUser;
+        public LoginPage ()
 		{
 			InitializeComponent ();
-		}
-	}
+            _contextUser = new LoginViewModel();
+        }
+        private void emailFocused(object sender, FocusEventArgs e)
+        {
+            _contextUser.Email.Validate();
+        }
+        private void passwordFocused(object sender, FocusEventArgs e)
+        {
+            _contextUser.Password.Validate();
+        }
+    }
 }

@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProyectRefit.Views.HomePage"
+             BackgroundColor="LightBlue"
+             Title="Home">
+    <ContentPage.Content>
+        <StackLayout
+            Padding="10">
+            <BoxView
+             Opacity="20"
+             Color="CornflowerBlue"
+             CornerRadius="10"
+             WidthRequest="160"
+             HeightRequest="160"
+             VerticalOptions="Center"
+             HorizontalOptions="Center"/>
+            <Label
+                TextColor="Black"
+              Margin="0,15"
+              VerticalOptions="Center"
+              HorizontalOptions="Center"
+              FontSize="Large"
+              FontAttributes="Bold"
+              Text="Bienvenidos a todo ventas"/>
+            <Image
+                HeightRequest="150"
+                WidthRequest="150"
+                Margin="0,20"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                Source="home"/>
+            <Label
+                LineBreakMode="WordWrap"
+                MaxLines="2"
+                Margin="0,10"
+                VerticalOptions="Center"
+                HorizontalOptions="Center"
+                TextColor="Black"
+                FontSize="Medium"
+                Text="La vision es que puedas vender los productos con seguridad en la plataforma"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

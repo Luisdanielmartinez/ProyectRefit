@@ -12,7 +12,11 @@
                 WidthRequest="100"
                 HeightRequest="100"
                 Margin="0,15"
-                Source="tokephoto"/>
+                Source="{Binding ImageSource}">
+                <Image.GestureRecognizers>
+                    <TapGestureRecognizer Command="{Binding SelectImageCommand}"></TapGestureRecognizer>
+                </Image.GestureRecognizers>
+            </Image>
             <Label
                 Margin="0,5"
                 HorizontalOptions="Center"

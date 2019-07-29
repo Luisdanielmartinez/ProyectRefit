@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProyectRefit.Views.LoginPage"
              BindingContext="{Binding Main, Source={StaticResource Locator}}"
+             BackgroundColor="Gainsboro"
              Title="Login">
     <ContentPage.Content>
         <ScrollView
@@ -24,21 +25,26 @@
                     Text="Email"
                     FontAttributes="Bold"/>
                 <Entry
+                    Unfocused="emailFocused"
+                    WidthRequest="150"
                     Placeholder="Ingrese su Email..."
-                    Text="{Binding Email}"
+                    Text="{Binding Email.Value}"
                     Margin="0,3"
-                    WidthRequest="80"/>
+                    />
+                <Label Text="{Binding Email.Error}" TextColor="Red" HorizontalTextAlignment="Center" />
                 <Label
                     Margin="0,10"
                     FontSize="Medium"
                     Text="Password"
                     FontAttributes="Bold"/>
                 <Entry
+                    Unfocused="passwordFocused"
+                    WidthRequest="150"
                     Placeholder="Ingrese su Password..."
-                    Text="{Binding Password}"
+                    Text="{Binding Password.Value}"
                     Margin="0,3"
-                    WidthRequest="80"/>
-                
+                    />
+                <Label Text="{Binding Password.Error}" TextColor="Red" HorizontalTextAlignment="Center" />
                 <StackLayout Orientation="Horizontal">
                     <Label
                         TextColor="Blue"
@@ -53,7 +59,11 @@
                         VerticalOptions="Center"
                         FontSize="Medium"
                         FontAttributes="Bold"
-                        Text="Registrarse"/>
+                        Text="Registrarse">
+                        <Label.GestureRecognizers>
+                            <TapGestureRecognizer Command="{Binding RegisterUserCommand}"/>
+                        </Label.GestureRecognizers>
+                    </Label>
                 </StackLayout>
                 <ActivityIndicator
                         IsVisible="{Binding IsVisible}"
@@ -64,6 +74,7 @@
                         IsRunning="{Binding IsRunning}"/>
 
                 <Button
+                    Margin="0,30"
                     Command="{Binding LoginCommand}"
                     HeightRequest="52"
                     BorderRadius="26"

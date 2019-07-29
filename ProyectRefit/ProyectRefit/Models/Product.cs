@@ -15,7 +15,7 @@ namespace ProyectRefit.Models
         [AliasAs("image")]
         [JsonProperty("image")]
         public string Image { get; set; }
-        [AliasAs("Id")]
+        [AliasAs("id")]
         [JsonProperty("id")]
         public long Id { get; set; }
         [AliasAs("Name")]
@@ -30,5 +30,8 @@ namespace ProyectRefit.Models
         [AliasAs("price")]
         [JsonProperty("price")]
         public decimal Price { get; set; }
+        [AliasAs("user")]
+        [JsonProperty("user")]
+        public User user { get; set; }
     }
 }

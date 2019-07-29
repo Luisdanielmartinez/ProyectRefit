@@ -4,10 +4,6 @@
              x:Class="ProyectRefit.Views.ProductPage"
              BindingContext="{Binding Main,Source={StaticResource Locator}}"
              Title="Products">
-    <ContentPage.ToolbarItems>
-        <ToolbarItem Icon="ic_action_add_circle.png"
-                     Command="{Binding AddProductCommand}"></ToolbarItem>
-    </ContentPage.ToolbarItems>
     <ContentPage.Content>
         <StackLayout
             BindingContext="{Binding Products}">
@@ -45,11 +41,11 @@
                                             <Label
                                                 TextColor="Black"
                                                 FontAttributes="Bold"
-                                                FontSize="Large"
+                                                FontSize="Medium"
                                                 Text="Nombre:"/>
                                             <Label
                                     	        FontAttributes="Bold"
-                                    	        FontSize="Medium"
+                                    	        FontSize="Default"
                                     	        Text="{Binding Name}"
                                     	        TextColor="Black">  
                                             </Label>
