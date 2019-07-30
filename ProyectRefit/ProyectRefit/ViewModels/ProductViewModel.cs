@@ -19,7 +19,17 @@ namespace ProyectRefit.ViewModels
         private List<Product> myProduct;
         private ObservableCollection<ProductItemViewModel> listProduct;
         private bool isRefresh;
+        private string filter;
+        public string Filter {
+            get {
+                return filter;
+            }
+            set {
 
+                filter = value;
+                this.ProductRefresh();
+            }
+        }
         public bool IsRefreshing
         {
             get => isRefresh;
@@ -38,8 +48,8 @@ namespace ProyectRefit.ViewModels
         }
 
         public ICommand RefreshCommand => new RelayCommand(Refresh);
+        public ICommand SearchCommand => new RelayCommand(ProductRefresh);
 
-      
         private async void LoadProduct()
         {
             try
@@ -47,7 +57,7 @@ namespace ProyectRefit.ViewModels
                 IsRefreshing = true;
                 var url = Application.Current.Resources["UrlApi"].ToString();
                 var apiService = RestService.For<IApiService>(url);
-                this.myProduct =  await apiService.GetProduct();
+                this.myProduct = await apiService.GetProduct();
                 // ListProduct = new ObservableCollection<Product>(response);
                 this.ProductRefresh();
                 IsRefreshing = false;
@@ -56,7 +66,7 @@ namespace ProyectRefit.ViewModels
             {
                await Application.Current.MainPage.DisplayAlert(
                     "Error",
-                    "Error con la Peticcion de los recursos.",
+                    ex.Message,
                     "Ok");
             }
         }
@@ -93,16 +103,38 @@ namespace ProyectRefit.ViewModels
 
         public void ProductRefresh()
         {
-            this.ListProduct = new ObservableCollection<ProductItemViewModel>(
-                myProduct.Select(p => new ProductItemViewModel
-                {
-                    Id = p.Id,
-                    Name = p.Name,
-                    Description = p.Description,
-                    Price = p.Price,
-                    IsAvalible = p.IsAvalible,
-                    Image = p.Image
-                }).OrderBy(p => p.Name));
+            //aqui estamos refrescando la lista 
+            if (string.IsNullOrEmpty(this.Filter))
+            {
+              
+               var mylist=  myProduct.Select(p => new ProductItemViewModel
+               {
+                   Id = p.Id,
+                   Name = p.Name,
+                   Description = p.Description,
+                   Price = p.Price,
+                   IsAvalible = p.IsAvalible,
+                   Image = p.Image
+               });
+                this.ListProduct = new ObservableCollection<ProductItemViewModel>(
+                   mylist.OrderBy(p => p.Description));
+            }
+            else
+            {
+                
+              var mylist= myProduct.Select(p => new ProductItemViewModel
+               {
+                   Id = p.Id,
+                   Name = p.Name,
+                   Description = p.Description,
+                   Price = p.Price,
+                   IsAvalible = p.IsAvalible,
+                   Image = p.Image
+               }).Where(p => p.Description.ToLower().Contains(this.Filter.ToLower())).ToList();
+                this.ListProduct = new ObservableCollection<ProductItemViewModel>(
+                   mylist.OrderBy(p => p.Description));
+            }
+        
         }
         private void Refresh()
         {

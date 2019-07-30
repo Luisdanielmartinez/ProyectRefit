@@ -19,7 +19,7 @@ namespace ProyectRefit.Backend.Controllers
             _context = context;
         }
 
-        [HttpGet("getAll")]
+        [HttpGet]
         public IEnumerable<Product> GET()
         {
             return _context.Products.ToList();

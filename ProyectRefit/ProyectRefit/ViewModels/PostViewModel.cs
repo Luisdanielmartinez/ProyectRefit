@@ -56,7 +56,7 @@ namespace ProyectRefit.ViewModels
             {
                 isBusy = true;
                 var url = Application.Current.Resources["UrlApi"].ToString();
-                var apiService = RestService.For<IApiService>(url);
+                var apiService = RestService.For<IApiService>("https://jsonplaceholder.typicode.com");
                 var response = await apiService.GET();
                // var list = (List<Post>)response.Result;
                 ListPost = new ObservableCollection<Post>(response);

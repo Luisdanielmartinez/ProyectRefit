@@ -13,7 +13,7 @@ namespace ProyectRefit.Interface
         [Get("/posts")]
         Task<List<Post>> GET();
         //product
-        [Get("/Product/getAll")]
+        [Get("/Product")]
         Task<List<Product>> GetProduct();
         [Post("/Product/create")]
         Task<Product>PostProduct([Body]Product product);
@@ -23,6 +23,6 @@ namespace ProyectRefit.Interface
         Task DelateProduct(long id);
         //users
         [Post("/Users/createUser")]
-        Task <User>PostUser([Body]User user);
+        Task<User> PostUser([Body]User user);
     }
 }

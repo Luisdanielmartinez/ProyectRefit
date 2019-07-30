@@ -26,7 +26,8 @@ namespace ProyectRefit.ViewModels
                     await App.Navigator.PushAsync(new AddProductPage());
                     break;
                 case "BuyProduct":
-                    //await App.Navigator.PushAsync();
+                    MainViewModel.GetInstance().Post = new PostViewModel();
+                    await App.Navigator.PushAsync(new PostPage());
                     break;
                 case "SeeProduct":
                     MainViewModel.GetInstance().Products = new ProductViewModel();

@@ -6,7 +6,16 @@
              Title="Products">
     <ContentPage.Content>
         <StackLayout
+            Padding="5"
             BindingContext="{Binding Products}">
+            <SearchBar
+                Margin="0,5"
+                HeightRequest="30"
+                Placeholder="Escriba el nombre del producto"
+                SearchCommand="{Binding SearchCommand}"
+                Text="{Binding Filter}">
+                
+            </SearchBar>
             <ListView
                 IsPullToRefreshEnabled="True"
                 RefreshCommand="{Binding RefreshCommand}"
