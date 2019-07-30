@@ -1,19 +1,19 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.136
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29123.88
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectRefit.Android", "ProyectRefit\ProyectRefit.Android\ProyectRefit.Android.csproj", "{A363495C-FB4B-44A3-88EF-03B78DC7EA9C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectRefit.iOS", "ProyectRefit\ProyectRefit.iOS\ProyectRefit.iOS.csproj", "{502F2FC6-C071-4DAC-85F6-1B81A8A253C4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectRefit", "ProyectRefit\ProyectRefit\ProyectRefit.csproj", "{C14FC62D-3EE4-4603-B50C-BAF37BEE7E2B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProyectRefit", "ProyectRefit\ProyectRefit\ProyectRefit.csproj", "{C14FC62D-3EE4-4603-B50C-BAF37BEE7E2B}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Frontend", "Frontend", "{770C9788-9027-4B7F-89F3-D8B409CAC37C}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Backend", "Backend", "{10D99A39-A4FE-45BD-8C7E-352CF0F8738A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProyectRefit.Backend", "ProyectRefit.Backend\ProyectRefit.Backend.csproj", "{30DC54BA-247F-4421-8AA7-8EDCC381AAC2}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProyectRefit.Backend", "ProyectRefit.Backend\ProyectRefit.Backend.csproj", "{30DC54BA-247F-4421-8AA7-8EDCC381AAC2}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

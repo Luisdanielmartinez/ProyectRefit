@@ -12,12 +12,17 @@ namespace ProyectRefit.Interface
     {
         [Get("/posts")]
         Task<List<Post>> GET();
-        [Get("/Product")]
+        //product
+        [Get("/Product/getAll")]
         Task<List<Product>> GetProduct();
         [Post("/Product/create")]
         Task<Product>PostProduct([Body]Product product);
+        [Put("update")]
+        Task PutProduct([Body]Product product);
+        [Delete("/Product/{id}")]
+        Task DelateProduct(long id);
         //users
-        [Post("/User/createUser")]
+        [Post("/Users/createUser")]
         Task <User>PostUser([Body]User user);
     }
 }

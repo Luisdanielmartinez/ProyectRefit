@@ -7,7 +7,7 @@
     <Application.Resources>
         <ResourceDictionary>
             <infra:InstanceLocator x:Key="Locator"></infra:InstanceLocator>
-            <x:String x:Key="UrlApi">http://192.168.2.15:8001/api</x:String>
+            <x:String x:Key="UrlApi">http://192.168.100.35:8001/api</x:String>
         </ResourceDictionary>
     </Application.Resources>
 </Application>

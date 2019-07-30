@@ -19,7 +19,7 @@ namespace ProyectRefit.Backend.Controllers
             _context = context;
         }
 
-        [HttpGet]
+        [HttpGet("getAll")]
         public IEnumerable<Product> GET()
         {
             return _context.Products.ToList();
@@ -43,10 +43,44 @@ namespace ProyectRefit.Backend.Controllers
             {
                 _context.Products.Add(product);
                 _context.SaveChanges();
-                return new CreatedAtRouteResult("creado", new {product});
+                return new CreatedAtRouteResult("creado", new { id = product.Id });
             }
             return BadRequest(ModelState);
 
+        }
+
+        [HttpPut("update")]
+        public async Task<ActionResult> put([FromBody] Product model)
+        {
+            try
+            {
+                var product = _context.Products.Single(x => x.Id == model.Id);
+                product.Name = model.Name;
+                product.IsAvalible = model.IsAvalible;
+                product.Price = model.Price;
+                product.Description = model.Description;
+                product.Image = model.Image;
+                _context.Update(product);
+                await _context.SaveChangesAsync();
+                return Ok(product);
+            }
+            catch (Exception)
+            {
+
+                return NotFound();
+            }
+        }
+        [HttpDelete("{Id}")]
+        public ActionResult delete(int Id)
+        {
+            var country = _context.Products.FirstOrDefault(x => x.Id == Id);
+            if (country == null)
+            {
+                return NotFound();
+            }
+            _context.Products.Remove(country);
+            _context.SaveChanges();
+            return Ok(country);
         }
     }
 }

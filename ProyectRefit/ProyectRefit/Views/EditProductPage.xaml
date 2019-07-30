@@ -64,7 +64,7 @@
                     	Command="{Binding SaveCommand}"
                     	HeightRequest="46"
                     	HorizontalOptions="FillAndExpand"
-                    	
+                    	IsEnabled="{Binding IsEnabled}"
                     	Text="Save"
                     	TextColor="White">
                     </Button>
@@ -74,7 +74,7 @@
                     	Command="{Binding DeleteCommand}"
                     	HeightRequest="46"
                     	HorizontalOptions="FillAndExpand"
-                    
+                        IsEnabled="{Binding IsEnabled}"
                     	Text="Delete"
                     	TextColor="White">
                     </Button>
