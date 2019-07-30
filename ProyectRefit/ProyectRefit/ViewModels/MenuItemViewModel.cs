@@ -21,6 +21,10 @@ namespace ProyectRefit.ViewModels
             var mainViewModel = MainViewModel.GetInstance();
             switch (this.PageName)
             {
+                case "mapaPage":
+                   // MainViewModel.GetInstance().AddProduct = new AddProductViewModel();
+                    await App.Navigator.PushAsync(new MapPage());
+                    break;
                 case "AddProduct":
                     MainViewModel.GetInstance().AddProduct = new AddProductViewModel();
                     await App.Navigator.PushAsync(new AddProductPage());

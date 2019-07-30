@@ -72,6 +72,11 @@ namespace ProyectRefit.ViewModels
             },
             new Menu {
                 Icon="ic_exit_to_app.png",
+                Title="Ver Mapa",
+                PageName="mapaPage"
+            },
+             new Menu {
+                Icon="ic_exit_to_app.png",
                 Title="Sign Out",
                 PageName="LoginPage"
             }

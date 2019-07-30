@@ -18,8 +18,11 @@
   <uses-permission android:name="android.permission.WRITE_SETTINGS" />
   <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
   <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
-
+     
   <application android:label="ProyectRefit.Android"></application>
+  <!--api de google-->
+  <meta-data android:name="com.google.android.maps.v2.API_KEY" 
+             android:value="AIzaSyAtxvXVhbzV9OTwZh8UxVsW2A58WYf-Btc" />
   <!--para tener accesos al la ruta de la img-->
   <!-- ADD FILE PROVIDER HERE -->
   <provider android:name="android.support.v4.content.FileProvider"
@@ -30,6 +33,12 @@
     <meta-data android:name="android.support.FILE_PROVIDER_PATHS"
                      android:resource="@xml/file_paths"></meta-data>
   </provider>
-
+  <uses-permission android:name="android.permission.INTERNET" />
+  <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+  <uses-permission android:name="android.permission.ACCESS_MOCK_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+  <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+  <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
 
 </manifest>

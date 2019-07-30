@@ -18,6 +18,7 @@ namespace ProyectRefit
         public App()
         {
             InitializeComponent();
+
             MainViewModel.GetInstance().Login = new LoginViewModel();
             this.MainPage = new NavigationPage(new LoginPage());
         }
