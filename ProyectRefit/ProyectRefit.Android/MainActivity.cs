@@ -22,8 +22,8 @@ namespace ProyectRefit.Droid
             base.OnCreate(savedInstanceState);
             //add this, and inicial the plugin
             CrossCurrentActivity.Current.Init(this, savedInstanceState);
-            global::Xamarin.FormsMaps.Init(this, savedInstanceState);
             global::Xamarin.Forms.Forms.Init(this, savedInstanceState);
+            global::Xamarin.FormsMaps.Init(this, savedInstanceState);
             LoadApplication(new App());
         }
         public override void OnRequestPermissionsResult(

@@ -17,6 +17,7 @@
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="17.2.0.36" />
     <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
     <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
     <PackageReference Include="Xamarin.Forms" Version="3.6.0.539721" />
     <PackageReference Include="Xamarin.Forms.Maps" Version="3.6.0.539721" />
   </ItemGroup>
