@@ -11,7 +11,7 @@
 
   <ItemGroup>
     <PackageReference Include="MvvmLightLibsStd10" Version="5.4.1.1" />
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.2" />
     <PackageReference Include="Plugin.ValidationRules" Version="1.1.0" />
     <PackageReference Include="Refit" Version="4.7.9" />
     <PackageReference Include="Syncfusion.Xamarin.Core" Version="17.2.0.36" />
